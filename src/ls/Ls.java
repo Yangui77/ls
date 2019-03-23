@@ -96,7 +96,6 @@ public class Ls {
      * @throws FileNotFoundException
      * @throws IOException 
      */
-    
     private static int lineCount(File file) throws FileNotFoundException, IOException{
         FileReader fr = new FileReader(file);
         LineNumberReader lnr = new LineNumberReader(fr);
@@ -134,6 +133,11 @@ public class Ls {
        fileSize =  "size : " + byteformatter(file.length()) + " ";
        return fileSize;
    }
+   /**
+    * Retourne le nombre de ligne du fichier 
+    * @param file
+    * @return 
+    */
    private static String getFileLineCount(File file){
        String lineCount = "";
        try {
@@ -144,6 +148,11 @@ public class Ls {
        return lineCount;
    }
    
+   /**
+    * Affichage récursive de tous les fichiers/dossiers 
+    * @param file
+    * @return 
+    */
    private static String getDirectoryRecursive(File file){
        String directory = "";
        File[] files =  file.listFiles();
@@ -157,6 +166,11 @@ public class Ls {
         }
        return directory;
    }
+   /**
+    * Afficher les dossiers et le nombres de fichiers à l'intérieur
+    * @param file
+    * @return 
+    */
    private static String getDirectoryAndFileCount(File file){
        String directory = "";
        int fileCount = 0;
@@ -166,6 +180,12 @@ public class Ls {
        directory += "  number of files: " + fileCount;
        return directory;
    }
+   /**
+    * Retourne le fichier/dossier caché si on a rentré le paramètre a 
+    * @param file
+    * @param result
+    * @return 
+    */
    private static Boolean displayHidden(File file, String result){
     if(file.isHidden()){
        return result.contains(AllowedParameter.a.toString());
