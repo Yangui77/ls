@@ -8,6 +8,10 @@ Ce projet est une version alternative de ls codé en JAVA.
     - Liste des fichiers et dossiers dans un dossier
     - Options permettant d'augmenter les informations affichées
 
+Prérequis
+
+Java 8
+
 Options supplémentaires
 * ``-a`` : Inclut les fichiers et dossiers cachés
 * ``-R`` : Recherche récursive, descend dans les dossiers
