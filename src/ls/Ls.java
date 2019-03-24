@@ -23,7 +23,6 @@ public class Ls {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       System.out.println(args);
        Boolean isRunning = true;
        while(isRunning){
         Scanner scanner = new Scanner(System.in);
@@ -34,7 +33,7 @@ public class Ls {
                 if(result.startsWith("ls")){
                     parseFolder(result);
                 } 
-                else System.out.println("Commande inconnu seule commande accepté : ls");
+                else System.out.println("Commande inconnu seule commande accepté : ls, exit");
             }
        }
     } 
@@ -127,7 +126,12 @@ public class Ls {
         String[] allowedParameters = Stream.of(AllowedParameter.values()).map(AllowedParameter::name).toArray(String[]::new);
         return Stream.of(parameters).allMatch(s -> Arrays.stream(allowedParameters).anyMatch(s :: equals));
    }
-    
+   
+   /**
+    * Retourne la taille du fichier
+    * @param file
+    * @return 
+    */
    private static String getFileSize(File file){
        String fileSize = "";
        fileSize =  "size : " + byteformatter(file.length()) + " ";
