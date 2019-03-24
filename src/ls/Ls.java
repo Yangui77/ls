@@ -19,11 +19,11 @@ import java.util.stream.Stream;
  * @author yan-7
  */
 public class Ls {
-
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+       System.out.println(args);
        Boolean isRunning = true;
        while(isRunning){
         Scanner scanner = new Scanner(System.in);
@@ -46,7 +46,7 @@ public class Ls {
      File folder = new File(System.getProperty("user.dir"));
      String[] parameters = result.split("-");
      if (parameters.length > 2){
-     System.out.println("Invalid request");
+     System.out.println("Pour utiliser plusieur paramètres p ls -pp");
      }
      if(parameters.length == 1 || (parameters.length == 2 && isValidParameter(parameters[1].split(""))) ){
        File[] listOfFiles = folder.listFiles();
